@@ -3,7 +3,7 @@
 
 
 <div class="row-fluid">
-    <div class="span6">
+    <div class="span12">
         <h2>All Students</h2>
 
         <table class="table table-striped">
@@ -13,6 +13,7 @@
                     <th>Email</th>
                     <th>Major</th>
                     <th>Graduation</th>
+                    <th>Signup Date</th>
                 </tr>
             </thead>
             #{list contacts}
@@ -21,6 +22,7 @@
                 <th>${_.email}</th>
                 <th>${_.major}</th>
                 <th>${_.gradyear}</th>
+                <th>${_.created?.format()}</th>
             </tr>
             #{/list}
 
