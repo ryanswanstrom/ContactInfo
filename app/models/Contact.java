@@ -1,5 +1,6 @@
 package models;
 
+import java.util.Date;
 import javax.persistence.Entity;
 import play.data.validation.Email;
 import play.data.validation.MaxSize;
@@ -24,6 +25,12 @@ public class Contact extends Model {
     @Required
     @MaxSize(100)
     public String gradyear;
+
+    public Date created;
+
+    public Contact() {
+        this.created = new Date();
+    }
 
 
 }
