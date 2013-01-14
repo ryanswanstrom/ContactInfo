@@ -18,7 +18,7 @@ public class Application extends Controller {
     }
 
     public static void results() {
-        List<Contact> contacts = Contact.findAll();
+        List<Contact> contacts = Contact.find("order by created").fetch();
         render(contacts);
     }
 
