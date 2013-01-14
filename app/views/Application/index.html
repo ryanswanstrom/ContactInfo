@@ -1,0 +1,48 @@
+#{extends 'main.html' /}
+#{set title:'Wells Fargo Contact Information' /}
+
+
+
+<div class="row-fluid">
+    <div class="span6">
+#{form @Application.addContact(),class:'form-horizontal'}
+
+<div class="well">
+    <fieldset>
+        <legend>Please Add Your Contact Information</legend>
+        <div class="control-group">
+            <label class="control-label" for="name" >Name #{ifError 'name'} <span class="error">#{error 'name' /}</span> #{/ifError}</label>
+            <div class="controls">
+                <input type="text" name="name" value="${flash['name']}"  placeholder="First and Last"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="email" >Email #{ifError 'email'} <span class="error">#{error 'email' /}</span>   #{/ifError}</label>
+            <div class="controls">
+                <input type="text" name="email" value="${flash['email']}"  placeholder="Email"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="major" >Major #{ifError 'major'} <span class="error">#{error 'major' /}</span> #{/ifError}</label>
+            <div class="controls">
+                <input type="text" name="major" value="${flash['major']}"  placeholder="Computer Science"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="gradyear" >Graduation Year #{ifError 'gradyear'} <span class="error">#{error 'gradyear' /}</span> #{/ifError}</label>
+            <div class="controls">
+                <input type="text" name="gradyear" value="${flash['gradyear']}"  placeholder="May 2013"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn btn-primary">Sign me up</button>
+            </div>
+        </div>
+    </fieldset>
+</div>
+#{/form}
+
+    </div>
+</div>
+

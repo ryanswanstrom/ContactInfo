@@ -1,0 +1,29 @@
+#{extends 'main.html' /}
+#{set title:'Wells Fargo Contact Information - All Students' /}
+
+
+<div class="row-fluid">
+    <div class="span6">
+        <h2>All Students</h2>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Major</th>
+                    <th>Graduation</th>
+                </tr>
+            </thead>
+            #{list contacts}
+            <tr>
+                <th>${_.name}</th>
+                <th>${_.email}</th>
+                <th>${_.major}</th>
+                <th>${_.gradyear}</th>
+            </tr>
+            #{/list}
+
+        </table>
+    </div>
+</div>
