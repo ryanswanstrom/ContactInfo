@@ -11,27 +11,27 @@
     <fieldset>
         <legend>Please Add Your Contact Information</legend>
         <div class="control-group">
-            <label class="control-label" for="name" >Name #{ifError 'name'} <span class="error">#{error 'name' /}</span> #{/ifError}</label>
+            <label class="control-label" for="name" >Name </label>
             <div class="controls">
-                <input type="text" name="name" value="${flash['name']}"  placeholder="First and Last"/>
+                <input type="text" name="name" value="${flash['name']}"  placeholder="First and Last"/>#{ifError 'name'} <span class="alert alert-error">#{error 'name' /}</span> #{/ifError}
             </div>
         </div>
         <div class="control-group">
-            <label class="control-label" for="email" >Email #{ifError 'email'} <span class="error">#{error 'email' /}</span>   #{/ifError}</label>
+            <label class="control-label" for="email" >Email</label>
             <div class="controls">
-                <input type="text" name="email" value="${flash['email']}"  placeholder="Email"/>
+                <input type="text" name="email" value="${flash['email']}"  placeholder="Email"/>  #{ifError 'email'} <span class="alert alert-error">#{error 'email' /}</span>   #{/ifError}
             </div>
         </div>
         <div class="control-group">
-            <label class="control-label" for="major" >Major #{ifError 'major'} <span class="error">#{error 'major' /}</span> #{/ifError}</label>
+            <label class="control-label" for="major" >Major </label>
             <div class="controls">
-                <input type="text" name="major" value="${flash['major']}"  placeholder="Computer Science"/>
+                <input type="text" name="major" value="${flash['major']}"  placeholder="Computer Science"/> #{ifError 'major'} <span class="alert alert-error">#{error 'major' /}</span> #{/ifError}
             </div>
         </div>
         <div class="control-group">
-            <label class="control-label" for="gradyear" >Graduation Year #{ifError 'gradyear'} <span class="error">#{error 'gradyear' /}</span> #{/ifError}</label>
+            <label class="control-label" for="gradyear" >Graduation Year</label>
             <div class="controls">
-                <input type="text" name="gradyear" value="${flash['gradyear']}"  placeholder="May 2013"/>
+                <input type="text" name="gradyear" value="${flash['gradyear']}"  placeholder="May 2013"/>  #{ifError 'gradyear'} <span class="alert alert-error">#{error 'gradyear' /}</span> #{/ifError}
             </div>
         </div>
         <div class="control-group">
