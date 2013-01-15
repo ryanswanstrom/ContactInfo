@@ -11,7 +11,7 @@ import play.db.jpa.Model;
 public class Contact extends Model {
 
     @Required
-    @MaxSize(100)
+    @MaxSize(50)
     public String name;
 
     @Required
@@ -19,17 +19,19 @@ public class Contact extends Model {
     public String email;
 
     @Required
-    @MaxSize(100)
+    @MaxSize(50)
     public String major;
 
     @Required
-    @MaxSize(100)
+    @MaxSize(20)
     public String gradyear;
 
     public Date created;
+    public String display;
 
     public Contact() {
         this.created = new Date();
+        this.display = "Y";
     }
 
 

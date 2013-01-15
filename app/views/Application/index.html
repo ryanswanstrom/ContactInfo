@@ -5,43 +5,49 @@
 
 <div class="row-fluid">
     <div class="span12">
-#{form @Application.addContact(),class:'form-horizontal'}
+        #{form @Application.addContact(),class:'form-horizontal'}
 
-<div class="well">
-    <fieldset>
-        <legend>Please Add Your Contact Information</legend>
-        <div class="control-group">
-            <label class="control-label" for="name" >Name </label>
-            <div class="controls">
-                <input type="text" name="name" value="${flash['name']}"  placeholder="First and Last"/>#{ifError 'name'} <span class="alert alert-error">#{error 'name' /}</span> #{/ifError}
+        <div class="well">
+            #{if flash.success}
+            <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                &{flash.success}
             </div>
+            #{/if}
+            <fieldset>
+                <legend>Please Add Your Contact Information</legend>
+                <div class="control-group">
+                    <label class="control-label" for="name" >Name </label>
+                    <div class="controls">
+                        <input type="text" name="name" value="${flash['name']}"  placeholder="First and Last"/>#{ifError 'name'} <span class="alert alert-error">#{error 'name' /}</span> #{/ifError}
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="email" >Email</label>
+                    <div class="controls">
+                        <input type="text" name="email" value="${flash['email']}"  placeholder="Email"/>  #{ifError 'email'} <span class="alert alert-error">#{error 'email' /}</span>   #{/ifError}
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="major" >Major </label>
+                    <div class="controls">
+                        <input type="text" name="major" value="${flash['major']}"  placeholder="Computer Science"/> #{ifError 'major'} <span class="alert alert-error">#{error 'major' /}</span> #{/ifError}
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="gradyear" >Graduation Year</label>
+                    <div class="controls">
+                        <input type="text" name="gradyear" value="${flash['gradyear']}"  placeholder="May 2013"/>  #{ifError 'gradyear'} <span class="alert alert-error">#{error 'gradyear' /}</span> #{/ifError}
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <button type="submit" class="btn btn-primary">Sign me up</button>
+                    </div>
+                </div>
+            </fieldset>
         </div>
-        <div class="control-group">
-            <label class="control-label" for="email" >Email</label>
-            <div class="controls">
-                <input type="text" name="email" value="${flash['email']}"  placeholder="Email"/>  #{ifError 'email'} <span class="alert alert-error">#{error 'email' /}</span>   #{/ifError}
-            </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label" for="major" >Major </label>
-            <div class="controls">
-                <input type="text" name="major" value="${flash['major']}"  placeholder="Computer Science"/> #{ifError 'major'} <span class="alert alert-error">#{error 'major' /}</span> #{/ifError}
-            </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label" for="gradyear" >Graduation Year</label>
-            <div class="controls">
-                <input type="text" name="gradyear" value="${flash['gradyear']}"  placeholder="May 2013"/>  #{ifError 'gradyear'} <span class="alert alert-error">#{error 'gradyear' /}</span> #{/ifError}
-            </div>
-        </div>
-        <div class="control-group">
-            <div class="controls">
-                <button type="submit" class="btn btn-primary">Sign me up</button>
-            </div>
-        </div>
-    </fieldset>
-</div>
-#{/form}
+        #{/form}
 
     </div>
 </div>

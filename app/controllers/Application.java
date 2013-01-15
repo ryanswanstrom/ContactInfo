@@ -18,14 +18,14 @@ public class Application extends Controller {
     }
 
     public static void results() {
-        List<Contact> contacts = Contact.find("order by created").fetch();
+        List<Contact> contacts = Contact.find("display = ? order by created", "Y").fetch();
         render(contacts);
     }
 
-    public static void addContact(@Required @MaxSize(100) String name,
+    public static void addContact(@Required @MaxSize(50) String name,
             @Required @Email String email,
-            @Required @MaxSize(100) String major,
-            @Required @MaxSize(100) String gradyear) {
+            @Required @MaxSize(50) String major,
+            @Required @MaxSize(20) String gradyear) {
         if (Validation.hasErrors()) {
             Logger.error("validation failed adding a contact");
             Validation.keep();
@@ -46,9 +46,16 @@ public class Application extends Controller {
         }
 
         Logger.info("contact added");
-        flash.success("Thank you");
+        flash.success("%s, thank you for your contact info", c.name);
         index();
 
+    }
+
+    public static void removeContact(Long id) {
+        Contact c = Contact.findById(id);
+        c.display = "N";
+        c.save();
+        results();
     }
 
 }
