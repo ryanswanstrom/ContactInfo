@@ -17,7 +17,7 @@
                     <th></th>
                 </tr>
             </thead>
-            #{list contacts}
+            *{ #{list contacts}
             <tr>
                 <td>${_.name?.escape()}</td>
                 <td>${_.email?.escape()}</td>
@@ -30,7 +30,7 @@
                     #{/form}
                 </td>
             </tr>
-            #{/list}
+            #{/list} }*
 
         </table>
     </div>
