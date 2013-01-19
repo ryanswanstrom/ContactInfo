@@ -14,6 +14,11 @@ import play.mvc.*;
 public class Application extends Controller {
 
     public static void index() {
+        List<Contact> cs = Contact.findAll();
+
+        for (Contact c : cs) {
+            c.delete();
+        }
         render();
     }
 
