@@ -4,7 +4,7 @@
 
 # Home page
 GET     /                                       Application.index
-GET     /results                                Application.results
+GET     /results                                Application.index
 POST    /addContact                             Application.addContact
 POST    /removeContact                          Application.removeContact
 
