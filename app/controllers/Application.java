@@ -18,7 +18,6 @@ public class Application extends Controller {
     }
 
     public static void results() {
-        Contact.deleteAll();
         List<Contact> contacts = Contact.find("display = ? order by created", "Y").fetch();
         render(contacts);
     }
