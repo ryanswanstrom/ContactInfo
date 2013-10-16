@@ -1,0 +1,16 @@
+# forget these directories
+modules*
+precompiled*
+test-result*
+eclipse*
+war*
+logs*
+nbproject*
+tmp*
+public/img/favicon.xcf
+bin/
+data/
+db/
+dist/
+logs/
+test-result/
