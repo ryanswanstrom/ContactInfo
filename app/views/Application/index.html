@@ -4,6 +4,7 @@
 
 
 <div class="row-fluid">
+    <p>${total}</p>
     <div class="span12">
         #{form @Application.addContact(),class:'form-horizontal'}
 
@@ -37,7 +38,7 @@
                 <div class="control-group">
                     <label class="control-label" for="gradyear" >Graduation Year</label>
                     <div class="controls">
-                        <input type="text" name="gradyear" value="${flash['gradyear']}"  placeholder="May 2013"/>  #{ifError 'gradyear'} <span class="alert alert-error">#{error 'gradyear' /}</span> #{/ifError}
+                        <input type="text" name="gradyear" value="${flash['gradyear']}"  placeholder="May 2014"/>  #{ifError 'gradyear'} <span class="alert alert-error">#{error 'gradyear' /}</span> #{/ifError}
                     </div>
                 </div>
                 <div class="control-group">
