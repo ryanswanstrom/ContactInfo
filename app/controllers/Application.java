@@ -14,8 +14,7 @@ import play.mvc.*;
 public class Application extends Controller {
 
     public static void index() {
-        long total = Contact.count();
-        render(total);
+        render();
     }
 
     public static void results() {
